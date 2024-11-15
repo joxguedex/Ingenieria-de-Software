@@ -1,0 +1,40 @@
+@startuml reto2JosueGuedez
+class Equipo{
+ +Nombre : string
+ -Registro : string
+}
+
+class Persona {
+  +Nombre : string
+  +Telefono : string
+  +Direccion : string
+}
+
+class Jugador extends Persona {
+  +Numero : int
+  +Posicion : string
+}
+
+class Capitan extends Jugador {
+
+}
+
+class Entrenador extends Persona {
+  +Nivel_de_acreditacion : string
+  +Anios_de_experiencia : int
+}
+
+class Juego{
+  +Localidad : string
+  +Puntuacion : string
+  +Fecha : date
+}
+
+Equipo "1" *-- "6..20" Jugador
+Jugador <|-- Capitan
+Equipo "1" -- "1" Capitan : tiene
+Equipo "1" -- "0..1" Entrenador : puede tener de
+Equipo "many" <-- "1" Entrenador: puede entrenar
+Equipo "many" --> "many" Juego : compiten
+
+@enduml

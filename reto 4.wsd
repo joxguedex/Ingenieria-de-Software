@@ -1,0 +1,158 @@
+@startuml reto4Josueguedez
+
+object Juego {
+    localidad = "Santiago"
+    puntuacion = "4-2"
+}
+
+object "Equipo:Venezuela" as Venezuela {
+    nombre = "Volley Caracas"
+    registro = "001"
+}
+
+object "Equipo:Colombia" as Colombia {
+    nombre = "Deportivo de Cali"
+    registro = "002"
+}
+
+object "Entrenador:Venezuela" as EntrenadorV {
+    nombre = "Fernando Batista"
+    telefono = "0412-6281169"
+    direccion = "Caracas, Venezuela"
+    nivelAcreditacion = "A"
+    aniosExperiencia = 10
+}
+
+object "Entrenador:Colombia" as EntrenadorC {
+    nombre = "Juan Rodriguez"
+    telefono = "+57 412-7893340"
+    direccion = "Bogotá, Colombia"
+    nivelAcreditacion = "A"
+    aniosExperiencia = 8
+}
+
+
+object "Jugador1:Venezuela" as Jugador1 {
+    nombre = "Andrés González"
+    telefono = "+58 416 589 2314"
+    direccion = "Maracay, Venezuela"
+    numero = 10
+    posicion = "Libero"
+
+}
+
+object "Jugador2:Venezuela" as Jugador2 {
+    nombre = "Marío Fernandez Rodríguez"
+    telefono = "+58 424 123 9876"
+    direccion = "Valencia, Venezuela"
+    numero = 1
+    posicion = "Opuesto"
+
+}
+
+object "Jugador3:Venezuela" as Jugador3 {
+    nombre = "Carlos Eduardo Pérez"
+    telefono = "+58 412 789 0123"
+    direccion = "Puerto La Cruz, Venezuela"
+    numero = 18
+    posicion = "Central"
+
+}
+
+object "Jugador4:Venezuela" as Jugador4 {
+    nombre = "José Luis Martínez"
+    telefono = "+58 426 345 6789"
+    direccion = "Barquisimeto, Venezuela"
+    numero = 9
+    posicion = "Punta"
+
+}
+
+object "Jugador5:Venezuela" as Jugador5 {
+    nombre = "Angel Jose Silva"
+    telefono = "+58 414 987 6543"
+    direccion = "Mérida, Venezuela"
+    numero = 5
+    posicion = "Central"
+
+}
+
+object "Jugador6:Venezuela" as Jugador6 {
+    nombre = "Miguel Ángel López"
+    telefono = "+58 424 123 4567"
+    direccion = "Caracas, Venezuela"
+    numero = 6
+    posicion = "Capitán"
+
+}
+
+
+object "Jugador1:Colombia" as Jugador7 {
+    nombre = "Juan David Gómez"
+    telefono = "+57 311 567 8901"
+    direccion = "Medellín, Colombia"
+    numero = 2
+    posicion = "Libero"
+}
+
+object "Jugador2:Colombia" as Jugador8 {
+    nombre = "Ruben Lopez Ramírez"
+    telefono = "+57 300 123 4567"
+    direccion = "Cali, Colombia"
+    numero = 11
+    posicion = "Opuesto"
+}
+
+object "Jugador3:Colombia" as Jugador9 {
+    nombre = "Sebastián Martínez"
+    telefono = "+57 310 789 0123"
+    direccion = "Bogotá, Colombia"
+    numero = 9
+    posicion = "Central"
+}
+
+object "Jugador4:Colombia" as Jugador10 {
+    nombre = "Andrés Felipe Pérez"
+    telefono = "+57 305 456 7890"
+    direccion = "Barranquilla, Colombia"
+    numero = 15
+    posicion = "Punta"
+}
+
+object "Jugador5:Colombia" as Jugador11 {
+    nombre = "Camilo Morales"
+    telefono = "+57 312 123 4567"
+    direccion = "Pereira, Colombia"
+    numero = 8
+    posicion = "Central"
+}
+
+object "Jugador6:Colombia" as Jugador12 {
+    nombre = "Santiago Rojas"
+    telefono = "+57 304 789 0123"
+    direccion = "Bucaramanga, Colombia"
+    numero = 7
+    posicion = "Capitán"
+}
+
+Juego *-- Venezuela : compiten
+Juego *-- Colombia : compiten
+
+Venezuela *-- Jugador1 : juega
+Venezuela *-- Jugador2 : juega
+Venezuela *-- Jugador3 : juega
+Venezuela *-- Jugador4 : juega
+Venezuela *-- Jugador5 : juega
+Venezuela *-- Jugador6 : juega
+
+Colombia *-- Jugador7 : juega
+Colombia *-- Jugador8 : juega
+Colombia *-- Jugador9 : juega
+Colombia *-- Jugador10 : juega
+Colombia *-- Jugador11 : juega
+Colombia *-- Jugador12 : juega
+
+Venezuela o-- EntrenadorV : organiza
+Colombia o-- EntrenadorC : organiza
+
+@enduml
