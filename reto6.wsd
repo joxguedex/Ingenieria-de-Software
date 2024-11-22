@@ -1,0 +1,9 @@
+@startuml reto6
+agent ": registro" as 1
+agent ": venta" as 3
+actor cliente
+
+cliente -- 1 : "1 : crearNuevaVenta() ->\n 2 : finalizarVenta() ->"
+1 ->1 : "\n introducirArticulo(id, cant)"
+1 - 3 : "\n crearLineaVenta(espec, cant) ->"
+@enduml

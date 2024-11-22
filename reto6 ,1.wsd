@@ -1,0 +1,26 @@
+@startuml diagrama_estado
+
+[*] --> Inicializando_Registro
+
+Inicializando_Registro : entry / crearNuevaVenta()
+Inicializando_Registro : do / inicializar registro
+Inicializando_Registro : exit / registro inicializado
+
+Inicializando_Registro --> Introduciendo_Articulo : agregar artículo
+Introduciendo_Articulo : entry / introducirArticulo(id, cant)
+Introduciendo_Articulo : do / obtener especificación del producto
+Introduciendo_Articulo : exit / artículo introducido
+
+Introduciendo_Articulo --> Creando_Linea_Venta : crear línea de venta
+Creando_Linea_Venta : entry / crearLineaVenta(espec, cant)
+Creando_Linea_Venta : do / añadir a línea de venta
+Creando_Linea_Venta : exit / línea de venta creada
+
+Creando_Linea_Venta --> Finalizando_Venta : finalizar venta
+Finalizando_Venta : entry / finalizarVenta()
+Finalizando_Venta : do / procesar venta
+Finalizando_Venta : exit / venta finalizada
+
+Finalizando_Venta --> [*]
+
+@enduml
