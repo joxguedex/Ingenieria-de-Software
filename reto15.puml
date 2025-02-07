@@ -1,0 +1,34 @@
+@startuml reto15
+class TurnOnDevices {
+    +void main(String[] args)
+    +void turnOnDevice(Connectable device)
+}
+
+class Lamp extends Connectable {
+}
+
+class Computer extends Connectable {
+}
+
+abstract class Connectable {
+    +void turnOn()
+    +boolean isOn()
+}
+
+class Adapter extends Connectable {
+    -CoffeMaker coffeMaker
+    +void turnOn()
+    +boolean isOn()
+}
+
+class CoffeMaker {
+    -boolean Off = true
+    +void on()
+    +void off()
+    +boolean isOff()
+}
+
+TurnOnDevices --> Connectable
+Adapter --> CoffeMaker
+
+@enduml
